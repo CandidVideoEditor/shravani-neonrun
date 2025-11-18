@@ -1,0 +1,22 @@
+:root{
+  --bg:#0b0f1a;
+  --card:#0f1724;
+  --accent:#ff6b6b;
+  --muted:#b9c0c7;
+}
+body{ margin:0; font-family: Inter, system-ui, sans-serif; background:linear-gradient(180deg,#071021,#0b0f1a); color:#e6eef6; }
+.topbar{ display:flex; align-items:center; justify-content:space-between; padding:12px 18px; background: rgba(255,255,255,0.03); border-bottom:1px solid rgba(255,255,255,0.02); }
+.brand{ display:flex; align-items:center; gap:12px; }
+.logo{ width:48px; height:48px; border-radius:8px; object-fit:cover; }
+.titles h1{ margin:0; font-size:18px; }
+.dev{ font-size:12px; color:var(--muted); }
+nav .btn{ margin-left:8px; padding:6px 10px; background:var(--accent); color:white; text-decoration:none; border-radius:8px; }
+.container{ padding:28px; }
+.hero{ text-align:center; padding:40px; }
+.cta{ display:inline-block; padding:12px 20px; background:var(--accent); color:white; border-radius:10px; text-decoration:none; margin-top:10px; }
+.card{ background:var(--card); padding:20px; border-radius:12px; max-width:720px; margin:20px auto; box-shadow: 0 6px 30px rgba(0,0,0,0.6);}
+.avatar{ width:36px; height:36px; border-radius:50%; object-fit:cover; }
+.big-avatar{ width:120px; height:120px; border-radius:12px; object-fit:cover; display:block; margin-bottom:12px; }
+.flashes{ list-style:none; padding:0; color: #ffdddd; }
+.notice{ max-width:720px; margin:30px auto; padding:20px; background:#2b2f3a; border-radius:12px; }
+.footer{ text-align:center; padding:18px; color:var(--muted); }
