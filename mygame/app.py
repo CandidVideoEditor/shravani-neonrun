@@ -10,7 +10,7 @@ from flask_session import Session
 APP_SECRET = os.environ.get("APP_SECRET", "dev-secret-change-me")
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET")
-BASE_URL = os.environ.get("BASE_URL", "http://localhost:5000")  # Replit will set this
+BASE_URL = os.environ.get("BASE_URL", "http://localhost:5000")
 
 UPLOAD_FOLDER = "static/uploads"
 ALLOWED_EXT = {"png", "jpg", "jpeg", "gif"}
@@ -26,7 +26,7 @@ Session(app)
 # ---------- OAuth ----------
 oauth = OAuth(app)
 if not GOOGLE_CLIENT_ID or not GOOGLE_CLIENT_SECRET:
-    pass  # will guard later
+    pass
 oauth.register(
     name='google',
     client_id=GOOGLE_CLIENT_ID,
@@ -105,12 +105,15 @@ def current_user():
         return session['user']
     return None
 
-# ---------- Routes ----------
-@app.before_first_request
+# ---------- Setup (Flask 3 safe way) ----------
 def setup():
     os.makedirs(UPLOAD_FOLDER, exist_ok=True)
     init_db()
 
+with app.app_context():
+    setup()
+
+# ---------- Routes ----------
 @app.route('/')
 def index():
     user = current_user()
@@ -127,34 +130,30 @@ def login():
 def authorize():
     token = oauth.google.authorize_access_token()
     userinfo = token.get('userinfo')
-    # Some providers use id_token; fallback
+
     if not userinfo:
         userinfo = oauth.google.parse_id_token(token)
     if not userinfo:
         return "Could not fetch user info from Google.", 400
 
-    # required fields
     google_id = userinfo.get("sub") or userinfo.get("id")
     email = userinfo.get("email")
     email_verified = userinfo.get("email_verified", False)
     picture = userinfo.get("picture")
 
     if not email or not google_id:
-        return "Missing required google account information (email/ID).", 400
+        return "Missing required Google account information.", 400
 
-    # If email isn't verified, block usage
     if not email_verified:
-        return render_template("login_required.html", message="Please verify your Google email before using this game.")
+        return render_template("login_required.html", message="Verify your Google email before using this game.")
 
     existing = find_user_by_google_id(google_id)
     if not existing:
-        # create user with no username yet
-        create_user(google_id=google_id, email=email, email_verified=True, username=None, profile_image=picture)
+        create_user(google_id, email, True, None, picture)
         user = find_user_by_google_id(google_id)
     else:
         user = existing
 
-    # store minimal session
     session.permanent = True
     session['user'] = {
         "id": user["id"],
@@ -164,7 +163,6 @@ def authorize():
         "profile_image": user["profile_image"]
     }
 
-    # if username missing, force choose
     if not user["username"]:
         return redirect(url_for('choose_username'))
     return redirect(url_for('game'))
@@ -179,13 +177,11 @@ def choose_username():
         if not username:
             flash("Enter a username.")
             return render_template("choose_username.html", user=user)
-        # username uniqueness
         if find_user_by_username(username):
-            flash("Username already taken. Pick another.")
+            flash("Username already taken.")
             return render_template("choose_username.html", user=user)
-        # save to DB
+
         set_username_for_google(user['google_id'], username)
-        # update session
         session['user']['username'] = username
         return redirect(url_for('profile'))
     return render_template("choose_username.html", user=user)
@@ -195,8 +191,8 @@ def profile():
     user = current_user()
     if not user:
         return redirect(url_for('index'))
+
     if request.method == 'POST':
-        # handle optional image upload
         if 'profile_image' in request.files:
             f = request.files['profile_image']
             if f and allowed_file(f.filename):
@@ -207,6 +203,7 @@ def profile():
                 session['user']['profile_image'] = save_path
                 flash("Profile image updated.")
         return redirect(url_for('profile'))
+
     return render_template("profile.html", user=user, dev_name="Shravani")
 
 @app.route('/game')
@@ -223,12 +220,10 @@ def logout():
     session.clear()
     return redirect(url_for('index'))
 
-# Static files uploaded
 @app.route('/uploads/<path:filename>')
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
-# health
 @app.route('/health')
 def health():
     return "OK"
