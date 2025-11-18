@@ -1,5 +1,7 @@
 <h2 align="center"><b> ⠐ Personal Information ⠐ </b></h2>
 
+![shravani neon](shravani-neon.svg)
+
 <p align='Middle'>
   <a href='https://www.instagram.com/shravaniiiiiiiiiiiii?igsh=am5hMjlzbGdpaGpt'>
     <img src='https://te.legra.ph/file/83da89ab8179aa95671e1.jpg' width='750'>
