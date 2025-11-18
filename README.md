@@ -1,8 +1,7 @@
-<h2 align="center"><b> ⠐ Personal Information ⠐ </b></h2>
+<h2 align="center"><b> ⠐Personal Information ⠐ </b></h2>
 
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/CandidVideoEditor/shravani-neonrun/main/assets/shravani-neon.svg" width="900" alt="shravani neon">
+<p align='middle'>
+  <img src="https://raw.githubusercontent.com/CandidVideoEditor/shravani-neonrun/main/assets/shravani-neon.svg" width="850" alt="shravani neon">
 </p>
 
 
