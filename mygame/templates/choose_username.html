@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card">
+    <h2>Choose your username</h2>
+    <form method="post" novalidate>
+      <label>Desired username</label>
+      <input name="username" maxlength="30" placeholder="Unique name (no spaces preferred)" required />
+      <button class="btn" type="submit">Save</button>
+    </form>
+    <p>Username must be unique — one username per player.</p>
+  </div>
+{% endblock %}
