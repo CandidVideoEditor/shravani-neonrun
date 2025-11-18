@@ -1,8 +1,9 @@
 <h2 align="center"><b> ⠐Personal Information ⠐ </b></h2>
 
-<p align='middle'>
-  <img src="https://raw.githubusercontent.com/CandidVideoEditor/shravani-neonrun/main/assets/shravani-neon.svg" width="850" alt="shravani neon">
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Montserrat&weight=900&size=28&duration=3500&pause=1200&color=9400D3&center=true&vCenter=true&width=800&lines=These+codes+are+licensed+by+Shravani+B.+Karatagi" alt="Typing SVG" />
 </p>
+
 
 
 <p align='Middle'>
