@@ -105,5 +105,3 @@
 
 ---
 
-## 🎵 Now Playing
-[![Spotify](https://spotify-readme-3s61yj059-xditya.vercel.app/api/spotify)](https://open.spotify.com/track/7gP8feCv65u5h7wMK7NZt9?si=d5Cyq1QCSOa4G2kVlRUpUw)
