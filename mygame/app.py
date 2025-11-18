@@ -87,13 +87,7 @@ def set_username_for_google(google_id, username):
     conn.execute("UPDATE users SET username = ? WHERE google_id = ?", (username, google_id))
     conn.commit()
     conn.close()
-
-def set_profile_image_for_google(google_id, profile_image):
-    conn = get_db()
-    conn.execute("UPDATE users SET profile_image = ? WHERE google_id = ?", (profile_image, google_id))
-    conn.commit()
-    conn.close()
-
+    
 # ---------- Utilities ----------
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXT
@@ -102,13 +96,6 @@ def current_user():
     if 'user' in session:
         return session['user']
     return None
-
-# ---------- FIXED FOR FLASK 3 ----------
-if __name__ == '__main__':
-    setup()
-    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
-
-
 
 # ---------- Routes ----------
 @app.route('/')
