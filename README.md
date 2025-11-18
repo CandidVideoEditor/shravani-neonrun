@@ -4,13 +4,12 @@
   <img src="https://readme-typing-svg.herokuapp.com?font=Montserrat&weight=900&size=28&duration=3500&pause=1200&color=9400D3&center=true&vCenter=true&width=800&lines=These+codes+are+licensed+by+Shravani+B.+Karatagi" alt="Typing SVG" />
 </p>
 
-
-
-<p align='Middle'>
-  <a href='https://www.instagram.com/shravaniiiiiiiiiiiii?igsh=am5hMjlzbGdpaGpt'>
-    <img src='https://te.legra.ph/file/83da89ab8179aa95671e1.jpg' width='750'>
+<p align="middle">
+  <a href="https://www.instagram.com/shravaniiiiiiiiiiiii?igsh=am5hMjlzbGdpaGpt">
+    <img src="https://raw.githubusercontent.com/CandidVideoEditor/shravani-neonrun/main/mygame/static/assets/neon-run.png" width="750">
   </a>
 </p>
+
 
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?color=F77247&width=420&lines=A+Passionate+developer+from+Karnataka✌️;Python%2C+Java%2C+Linux❤️">
