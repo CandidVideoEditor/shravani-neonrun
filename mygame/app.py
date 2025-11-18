@@ -10,7 +10,7 @@ from flask_session import Session
 APP_SECRET = os.environ.get("APP_SECRET", "dev-secret-change-me")
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET")
-BASE_URL = os.environ.get("BASE_URL", "http://localhost:5000")
+BASE_URL = os.environ.get("BASE_URL", "http://localhost:5000")  # Replit will set this
 
 UPLOAD_FOLDER = "static/uploads"
 ALLOWED_EXT = {"png", "jpg", "jpeg", "gif"}
@@ -26,15 +26,13 @@ Session(app)
 # ---------- OAuth ----------
 oauth = OAuth(app)
 if not GOOGLE_CLIENT_ID or not GOOGLE_CLIENT_SECRET:
-    pass
+    pass  # will guard later
 oauth.register(
     name='google',
     client_id=GOOGLE_CLIENT_ID,
     client_secret=GOOGLE_CLIENT_SECRET,
     server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
-    client_kwargs={
-        'scope': 'openid email profile'
-    }
+    client_kwargs={'scope': 'openid email profile'}
 )
 
 # ---------- Database helpers ----------
@@ -105,13 +103,16 @@ def current_user():
         return session['user']
     return None
 
-# ---------- Setup (Flask 3 safe way) ----------
-def setup():
-    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-    init_db()
+# ---------- FIXED FOR FLASK 3 ----------
+setup_done = False
 
-with app.app_context():
-    setup()
+@app.before_request
+def setup():
+    global setup_done
+    if not setup_done:
+        os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+        init_db()
+        setup_done = True
 
 # ---------- Routes ----------
 @app.route('/')
@@ -142,10 +143,10 @@ def authorize():
     picture = userinfo.get("picture")
 
     if not email or not google_id:
-        return "Missing required Google account information.", 400
+        return "Missing required google account information.", 400
 
     if not email_verified:
-        return render_template("login_required.html", message="Verify your Google email before using this game.")
+        return render_template("login_required.html", message="Please verify your Google email before using this game.")
 
     existing = find_user_by_google_id(google_id)
     if not existing:
@@ -165,6 +166,7 @@ def authorize():
 
     if not user["username"]:
         return redirect(url_for('choose_username'))
+
     return redirect(url_for('game'))
 
 @app.route('/choose-username', methods=['GET','POST'])
@@ -172,11 +174,13 @@ def choose_username():
     user = current_user()
     if not user:
         return redirect(url_for('index'))
+
     if request.method == 'POST':
         username = request.form.get("username", "").strip()
         if not username:
             flash("Enter a username.")
             return render_template("choose_username.html", user=user)
+
         if find_user_by_username(username):
             flash("Username already taken.")
             return render_template("choose_username.html", user=user)
@@ -184,6 +188,7 @@ def choose_username():
         set_username_for_google(user['google_id'], username)
         session['user']['username'] = username
         return redirect(url_for('profile'))
+
     return render_template("choose_username.html", user=user)
 
 @app.route('/profile', methods=['GET','POST'])
@@ -213,6 +218,7 @@ def game():
         return redirect(url_for('index'))
     if not user.get('username'):
         return redirect(url_for('choose_username'))
+
     return render_template("game.html", user=user, dev_name="Shravani")
 
 @app.route('/logout')
