@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{ title|default("Phantom Arcade") }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <img src="{{ url_for('static', filename='assets/placeholder.png') }}" alt="logo" class="logo" />
+        <div class="titles">
+          <h1>Phantom Arcade</h1>
+          <div class="dev">Developed by <strong>{{ dev_name }}</strong></div>
+        </div>
+      </div>
+      <nav>
+        {% if user %}
+          <span class="userbox">
+            <img class="avatar" src="{{ user.profile_image or url_for('static', filename='assets/placeholder.png') }}" />
+            <span class="username">{{ user.username or "Set username" }}</span>
+            <a class="btn" href="{{ url_for('profile') }}">Profile</a>
+            <a class="btn" href="{{ url_for('logout') }}">Logout</a>
+          </span>
+        {% else %}
+          <a class="btn" href="{{ url_for('login') }}">Sign in with Google</a>
+        {% endif %}
+      </nav>
+    </header>
+
+    <main class="container">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="flashes">
+            {% for m in messages %}
+              <li>{{ m }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+      <small>© {{ dev_name }} — Phantom Arcade</small>
+    </footer>
+  </body>
+</html>
