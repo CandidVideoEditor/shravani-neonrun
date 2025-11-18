@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+  <div id="game-container"></div>
+
+  <script>
+    // pass some user info to client
+    window.APP = {
+      user: {{ user|tojson }},
+      devName: "{{ dev_name }}"
+    };
+  </script>
+
+  <!-- Game code -->
+  <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+{% endblock %}
