@@ -22,8 +22,10 @@
 
 
 # Activity Graph
-![CandidVideoEditor GitHub Graph](https://activity-graph.herokuapp.com/graph?username=CandidVideoEditor&custom_title=My%20Graph&bg_color=241731&line=f20f80&color=f52f91&point=fdf5ea&hide_border=true&area=false&area_color=fdf5ea)
 
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Montserrat&weight=900&size=28&duration=3500&pause=1200&color=9400D3&center=true&vCenter=true&width=800&lines=Developer+Shravani+B.+Karatagi" alt="Typing SVG" />
+</p>
 
 - **Name** = "[DEVELOPER](https://www.instagram.com/shravaniiiiiiiiiiiii?igsh=am5hMjlzbGdpaGpt)"  
 - **Username (Global)** = **Shravani**  
