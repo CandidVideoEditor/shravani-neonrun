@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="notice">
+    <h2>Login required</h2>
+    <p>{{ message }}</p>
+    <p>Please ensure your Google email is verified and try again.</p>
+    <a href="{{ url_for('index') }}">Go back</a>
+  </div>
+{% endblock %}
