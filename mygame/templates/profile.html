@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card">
+    <h2>Your Profile</h2>
+    <img class="big-avatar" src="{{ user.profile_image or url_for('static', filename='assets/placeholder.png') }}" alt="avatar" />
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Username:</strong> {{ user.username or 'Not set' }}</p>
+
+    <form method="post" enctype="multipart/form-data">
+      <label>Upload profile image (optional)</label>
+      <input type="file" name="profile_image" accept="image/*">
+      <button class="btn" type="submit">Upload</button>
+    </form>
+
+    <p><a href="{{ url_for('game') }}" class="btn">Go to Game</a></p>
+  </div>
+{% endblock %}
