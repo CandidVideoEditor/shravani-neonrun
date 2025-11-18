@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+  <section class="hero">
+    <h2>Welcome to Phantom Arcade</h2>
+    <p>Play a fast, colorful web game — login with your Google account to start. No password required.</p>
+    {% if not user %}
+      <a class="cta" href="{{ url_for('login') }}">Sign in with Google</a>
+    {% else %}
+      <a class="cta" href="{{ url_for('game') }}">Play Now</a>
+    {% endif %}
+  </section>
+{% endblock %}
