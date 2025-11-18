@@ -16,7 +16,7 @@
 </p>
 <br>
 
-## Github Stats ![CandidVideoEditor GitHub stats](https://github-readme-stats.vercel.app/api?username=CandidVideoEditor&show_icons=true&theme=synthwave) &nbsp; ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=CandidVideoEditor&layout=compact&show_icons=true&theme=synthwave)
+## Github Stats ![Shravani's GitHub stats](https://github-readme-stats.vercel.app/api?username=torvalds&show_icons=true&theme=synthwave) &nbsp; ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=torvalds&layout=compact&show_icons=true&theme=synthwave)
 
 # Activity Graph
 
