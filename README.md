@@ -29,7 +29,7 @@
 - **Name** = "[DEVELOPER](https://www.instagram.com/shravaniiiiiiiiiiiii?igsh=am5hMjlzbGdpaGpt)"  
 - **Username (Global)** = **Shravani**  
 - **Project Name** = **shravani-neonrun**  
-- **Occupation** = "AIML DEveloper"  
+- **Occupation** = "AIML Developer"  
 - **Age** = "21"  
 - **Country** = "🇮🇳 Koppala, Karnataka"
 
