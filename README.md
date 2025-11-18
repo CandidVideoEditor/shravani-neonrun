@@ -20,12 +20,12 @@
 ![CandidVideoEditor GitHub Graph](https://activity-graph.herokuapp.com/graph?username=CandidVideoEditor&custom_title=My%20Graph&bg_color=241731&line=f20f80&color=f52f91&point=fdf5ea&hide_border=true&area=false&area_color=fdf5ea)
 
 
-- **Name** = "[𝐏𝐑𝐎𝐅𝐄𝐒𝐒𝐎𝐑 𝐀𝐆𝐎𝐑𝐀 {👨‍🏫}](https://www.instagram.com/shravaniiiiiiiiiiiii?igsh=am5hMjlzbGdpaGpt)"  
-- **Username (Global)** = **CandidVideoEditor**  
+- **Name** = "[DEVELOPER](https://www.instagram.com/shravaniiiiiiiiiiiii?igsh=am5hMjlzbGdpaGpt)"  
+- **Username (Global)** = **Shravani**  
 - **Project Name** = **shravani-neonrun**  
-- **Occupation** = "3D Film Maker"  
-- **Age** = "22"  
-- **Country** = "🇮🇳 Belagavi, Karnataka"
+- **Occupation** = "AIML DEveloper"  
+- **Age** = "21"  
+- **Country** = "🇮🇳 Koppala, Karnataka"
 
 
 ---
@@ -56,7 +56,7 @@
 <summary>⠂ Contact Me ⠐</summary>
 <h2 align="center"><b>⠂ Contact Me ⠐</b></h2>
 
-[![Gmail](https://img.shields.io/badge/Gmail.com-0072c6?style=for-the-badge&logo=gmail&logoColor=white)](mailto:pro045legendboy@gmail.com)
+[![Gmail](https://img.shields.io/badge/Gmail.com-0072c6?style=for-the-badge&logo=gmail&logoColor=white)](mailto:chinnipapa19982004@gmail.com)
 </details>
 
 ---
@@ -66,10 +66,10 @@
 <h2 align="center"><b> ⠂ Social Media Accounts ⠐</b></h2>
 
 [![Instagram](https://img.shields.io/badge/-Instagram-E1306C?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/shravaniiiiiiiiiiiii?igsh=am5hMjlzbGdpaGpt)
-[![Telegram](https://img.shields.io/badge/Telegram-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Pro_LegendBoy)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/Pro_LegendBoy)
-[![Facebook](https://img.shields.io/badge/Facebook-4267B2?style=for-the-badge&logo=Facebook&logoColor=white)](https://facebook.com/Pro_LegendBoy)
-[![Replit](https://img.shields.io/badge/Repl.it-%230D101E?style=for-the-badge&logo=repl.it&logoColor=white)](https://repl.it/@ProBoy_OP)
+[![Telegram](https://img.shields.io/badge/Telegram-0088cc?style=for-the-badge&logo=telegram&logoColor=white)]([https://t.me/Pro_LegendBoy](https://www.instagram.com/shravaniiiiiiiiiiiii?igsh=am5hMjlzbGdpaGpt))
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)]([https://twitter.com/Pro_LegendBoy](https://www.instagram.com/shravaniiiiiiiiiiiii?igsh=am5hMjlzbGdpaGpt))
+[![Facebook](https://img.shields.io/badge/Facebook-4267B2?style=for-the-badge&logo=Facebook&logoColor=white)]([https://facebook.com/Pro_LegendBoy](https://www.instagram.com/shravaniiiiiiiiiiiii?igsh=am5hMjlzbGdpaGpt))
+[![Replit](https://img.shields.io/badge/Repl.it-%230D101E?style=for-the-badge&logo=repl.it&logoColor=white)]([https://repl.it/@ProBoy_OP](https://www.instagram.com/shravaniiiiiiiiiiiii?igsh=am5hMjlzbGdpaGpt))
 </details>
 
 ---
