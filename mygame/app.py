@@ -104,15 +104,14 @@ def current_user():
     return None
 
 # ---------- FIXED FOR FLASK 3 ----------
-setup_done = False
-
-@app.before_request
 def setup():
-    global setup_done
-    if not setup_done:
-        os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-        init_db()
-        setup_done = True
+    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+    with app.app_context():
+        db.create_all()
+if __name__ == "__main__":
+    setup()
+    app.run(debug=True)
+
 
 # ---------- Routes ----------
 @app.route('/')
